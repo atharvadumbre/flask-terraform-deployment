@@ -46,7 +46,7 @@ def analyze_review(review_text):
         GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
         genai.configure(api_key=GOOGLE_API_KEY)
 
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-1.5-flash')
         full_prompt = PROMPT.format(review=review_text)
         response = model.generate_content(full_prompt)
 
