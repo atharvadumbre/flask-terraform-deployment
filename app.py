@@ -5,6 +5,7 @@ from sumy.summarizers.kl import KLSummarizer
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()
 
@@ -69,6 +70,8 @@ def analyze_review(review_text):
         return f"AttributeError: {str(e)}"
     except Exception as e:
         return f"An error occurred: {str(e)}"
+
+logging.basicConfig(level=logging.DEBUG, filename='app.log', format='%(asctime)s %(levelname)s:%(message)s')
 
 @app.route('/summarize', methods=['POST'])
 def summarize_text():
