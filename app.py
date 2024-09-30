@@ -6,6 +6,8 @@ import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 import logging
+import nltk
+nltk.download('punkt_tab')
 
 load_dotenv()
 
